@@ -214,7 +214,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 4101107990,,,Makedonska sofra,Mo-Sa 08:00-01:00,,wlan,38978929010,,,21.4365756,41.9871974
 4110147399,,balkan,Етно кујна Вила Елена,,,,,,,21.4448873,42.1382444
 4126731965,,international,Sky ресторанот,,,,,,,21.434577,41.9973163
-4149490289,Скопје,mexican,Amigos Мексиканска Кантина,"Mo-Th 08:00-24:00, Fr, Su 10:00-24:00",yes,,,21.4300742,41.9933026
+4149490289,Скопје,mexican,Amigos Мексиканска Кантина,"Mo-Th 08:00-24:00; Fr-Su 10:00-24:00",,,,,,21.4300742,41.9933026
 4154573189,,burger;sandwich;breakfast;ice_cream;tea;cake;coffee_shop;pasta;pizza;diner,Era,Mo-Su 09:00-24:00,,wlan,,,,20.9614188,41.9995695
 4154574089,,burger;sandwich;ice_cream;grill;cake;coffee_shop;pasta;greek;balkan;pancake;pizza;fish_and_chips;diner;italian_pizza;fish;hot_dog;breakfast;tea;italian,Restaurant Boss,24/7,,wlan,,,,20.961125,41.9976539
 4190335990,,,Restaurant Oaza,,,,,,,20.9734955,41.8453568
