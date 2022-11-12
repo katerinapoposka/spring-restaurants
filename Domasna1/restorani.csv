@@ -147,7 +147,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 2891537201,,balkan;regional,"""Kaj Govedoto"" Restaurant",,,,,,isolated,22.5914449,42.0170338
 2905985671,,regional;pizza;kebab;chicken,Shizik Restaurant,,,,,,outside,22.5886582,42.0178835
 2905985814,,kebab;regional;barbecue,"""Koko"" Restaurant",,,,,,outside,22.5899229,42.0195336
-2984088703,,,Prestol,07:00-21:00,http://www.hotelprestol.com,wlan,+389 46277858,,,20.8016787,41.0678423
+2984088703,,,Prestol,07:00-21:00,http://www.hotelprestol.com,wlan,+389 46 277 858,,,20.8016787,41.0678423
 2992064333,,,Granit,,http://www.hotelgranit.com.mk,wlan,+389 46 207 100,reservation@hotelgranit.com.mk,,20.8009009,41.0666434
 3005348016,,,Meydan,,,,,,,20.8002909,41.116341
 3020876346,,,Старо Буре,,,,,,,21.3236858,42.0597023
@@ -176,7 +176,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 3505013893,Скопје,kebab,Destan,08:00-23:00,,,,,separated,21.4319604,41.9947506
 3505013993,Скопје,italian,Ла Тераца,"08:00-24:00; Fr-Sa 08:00-01:00",,,+389 2 311 3380,,yes,21.4317257,41.9950911
 3506695093,,italian,Brooklyn Lounge Bar,08:00-00:00; Fr-Sa 08:00-01:00,,,,,separated,21.3910004,42.0045421
-3536179577,,,Носталгија,,,wlan,+389 2 3060 708,,,21.4099065,41.9953743
+3536179577,,,Носталгија,,,wlan,+389 2 306 0708,,,21.4099065,41.9953743
 3647039848,,,Exclusive,,,,,,,21.733628,42.1208566
 3647048030,,,Тераца,,,,,,,21.7448727,42.1214792
 3648714485,Cкoпje,,Барбакан,08:00-01:00,,,,,,21.4063144,42.0062651
