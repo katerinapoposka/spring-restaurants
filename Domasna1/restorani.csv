@@ -7,7 +7,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 411006922,,,Интермецо,,,,,,,21.4140669,41.9947432
 411634092,,italian_pizza;regional;balkan,Скар,,,wlan,,,,21.2485747,41.368101
 411634094,,,Бенетон,,,,,,,21.2486257,41.3681312
-414619170,,chicken;diner;regional;pancake;sausage;coffee_shop;ice_cream;balkan;mediterranean;burger;fish;breakfast;grill,Cardak,Mo-Su 08:00-02:00,,wlan,38978420959,,,21.2151321,41.5065603
+414619170,,chicken;diner;regional;pancake;sausage;coffee_shop;ice_cream;balkan;mediterranean;burger;fish;breakfast;grill,Cardak,Mo-Su 08:00-02:00,,wlan,+389 78 420 959,,,21.2151321,41.5065603
 414619172,,,Lisec,,,,,,,21.2177087,41.5075223
 419115353,,fish,Пешна,,www.pesnamotel.com.mk,,,pesnamotel@yahoo.com,,21.2442677,41.541066
 419829216,,,Kico,,,,,,,22.0111128,41.4412564
@@ -46,14 +46,14 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 911173351,,,Tropic,,,,,,,22.0333387,41.397022
 911176033,,,Moskva,,,,,,,22.004638,41.4347168
 1021423924,,,Maestro Cafe,,,,,,,20.9731075,42.0080851
-1132688809,,international,River Side Garden,,,,38970890606,,,21.3274583,41.9953819
+1132688809,,international,River Side Garden,,,,+389 70 890 606,,,21.3274583,41.9953819
 1371716593,,,Топаз,,,,,,,21.4122694,41.9979155
 1372568001,,,Веки,,,,,,,21.3989291,42.000855
 1377184494,,,Велково Меанче,,,,,,,21.4960141,42.0013936
 1378130151,,,Чешма,,,,,,,21.4390455,41.9841333
 1378228324,,,Ресторан Трпеза,,,,,,,21.4455687,41.9710708
 1378228333,,,Ресторан Кум,,,,,,,21.4385091,41.9787578
-1380378665,,burger;regional;breakfast;grill;mediterranean;balkan;chicken;kebab,Рустикана,Mo-Su 10:00-00:00,,wlan,38971383382,dinamic.ksk@gmail.com,,21.4078483,41.9997295
+1380378665,,burger;regional;breakfast;grill;mediterranean;balkan;chicken;kebab,Рустикана,Mo-Su 10:00-00:00,,wlan,+389 71 383 382,dinamic.ksk@gmail.com,,21.4078483,41.9997295
 1380378702,,,Боеми,,,,,,,21.415982,41.9985008
 1475328750,,regional,Restoran Tomi,,,,,,,21.3462963,42.0464013
 1475388232,,regional,Meraklii,,,,,,,21.3508185,42.0299906
@@ -73,11 +73,11 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 1712601392,,,Розе Сала,,,,,,,21.7842139,41.7154688
 1747649203,,,Крчма,,,,,,,21.4151525,41.9946274
 1748017584,Скопје,regional,Marana,,,,,,,21.4204907,41.9904847
-1751563134,Cкoпje,international,Pastel Wine & Dine,Mo-Fr 06:30-21:00; Sa 06:30-17:00; Su 06:30-16:00,http://pastel.mk/,wlan,+389 2 3214447,,outside,21.4245254,41.9947645
+1751563134,Cкoпje,international,Pastel Wine & Dine,Mo-Fr 06:30-21:00; Sa 06:30-17:00; Su 06:30-16:00,http://pastel.mk/,wlan,+389 2 3214 447,,outside,21.4245254,41.9947645
 1752178268,,italian,511,,,,,,,21.4163482,41.9922398
 1752186795,,,Акорд,,,,,,,21.4086601,41.9972291
 1768193993,,,Баба Цана,,,,,,,21.7204006,42.1365224
-1770866402,,pizza,Пицерија Либертас,,,,38970567295,,,21.4207447,41.9987097
+1770866402,,pizza,Пицерија Либертас,,,,+389 70 567 295,,,21.4207447,41.9987097
 1776012307,,,Корнер,,,,,,,21.7318423,42.1235585
 1790311348,,regional,Ресторан СОНЦЕ - Restaurant SONCE,,,,,,,22.819584,41.3811426
 1791598024,,,Хотел Иштатов,,,wlan,,,,22.6991213,41.2271802
@@ -87,7 +87,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 1850521527,,,Дарвик,,,,,,,21.4523161,42.0537503
 1857486052,,barbecue,Тица - Елени,,,,,,,21.4647397,42.0019716
 1867176020,,international,Тренд,,,,,,,21.4304595,41.9957062
-1868812117,Cкoпje,barbecue,Дестан,Mo-Su 09:00-23:00,https://destan.mk/pocetna/,,38923127324,,separated,21.4204158,41.9987513
+1868812117,Cкoпje,barbecue,Дестан,Mo-Su 09:00-23:00,https://destan.mk/pocetna/,,+389 2 3127 324,,separated,21.4204158,41.9987513
 1868812169,,barbecue,Ана Кристи,,,,,,,21.3995909,42.0034064
 1868933572,,macedonian,Фотка,,,,,,,21.3992299,42.0017742
 1874196851,,regional,Осоговски Бисер,,,,,,,22.3532041,42.0371055
