@@ -1,3 +1,4 @@
+id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smoking,lon,lat
 309894643,Скопје,italian,Пелистер,Mo-Th 07:00-00:00; Fr-Sa 07:00-01:00; Su 10:30-00:00,https://www.pelisterhotel.com.mk/,,,,,21.4315704,41.9953933
 382645252,,,Brioni,,,,,,,22.0215553,41.4347276
 386705447,,,Ramazzoti,,,,,,,22.0115107,41.4412063
@@ -223,7 +224,7 @@
 4252577296,,,Via Ignatia,,,,,,,20.5959852,41.2357204
 4253086993,,,Dr. Falafel,"Mo-Sa 09:30-22:30, Su 16:00-23:00",,,+389 77 897 167,,20.8011081,41.1166205
 4253210327,,,Мулино Гарден,,,,,,,21.4212497,41.9495659
-4267161773,,,Restaurant Emporium,"Mo-Th 08:00-24:00, Fr-Sa 08:00-01:00,,,,,20.9894268,42.0041795
+4267161773,,,Restaurant Emporium,Mo-Th 08:00-24:00, Fr-Sa 08:00-01:00,,,,,20.9894268,42.0041795
 4267660935,,steak_house,Fontana Grill,Mo-Su 08:00-24:00,,,+389 70 664 471,,,20.989468,42.0042478
 4270352289,,burger;sandwich;regional;international;grill;coffee_shop;pasta;balkan;pancake;pizza;fish_and_chips;diner;chicken;italian_pizza;fish;seafood;mediterranean;italian;fine_dining,Restoran Prado,Mo-Th 08:00-24:00; Fr-Sa 08:00-01:00; Su 10:00-24:00,https://m.facebook.com/prado.kumanovo/,wlan,38931430100,,,21.7206493,42.1320465
 4275843195,,,Лавче,,,,,,,21.4160063,41.9969599
