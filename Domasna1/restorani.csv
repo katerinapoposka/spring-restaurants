@@ -174,9 +174,9 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 3428428993,,,Cuna,,,,,,,20.800088,41.115966
 3484100384,Скопје,,Dal Fufo - Galija,,,,,,,21.4231542,41.9917018
 3505013893,Скопје,kebab,Destan,08:00-23:00,,,,,separated,21.4319604,41.9947506
-3505013993,Скопје,italian,Ла Тераца,"08:00-24:00; Fr-Sa 08:00-01:00",,,,+389 2 3113380,yes,21.4317257,41.9950911
+3505013993,Скопје,italian,Ла Тераца,"08:00-24:00; Fr-Sa 08:00-01:00",,,,+389 2 3113 380,yes,21.4317257,41.9950911
 3506695093,,italian,Brooklyn Lounge Bar,08:00-00:00; Fr-Sa 08:00-01:00,,,,,separated,21.3910004,42.0045421
-3536179577,,,Носталгија,,,wlan,38923060708,,,21.4099065,41.9953743
+3536179577,,,Носталгија,,,wlan,+389 2 3060 708,,,21.4099065,41.9953743
 3647039848,,,Exclusive,,,,,,,21.733628,42.1208566
 3647048030,,,Тераца,,,,,,,21.7448727,42.1214792
 3648714485,Cкoпje,,Барбакан,08:00-01:00,,,,,,21.4063144,42.0062651
@@ -208,10 +208,10 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 3930911802,Tetovo,pizza,Restaurant Sirena,07:00- 24:00,,,+389 44 335 701,,isolated,20.9750309,42.0077518
 3932033588,,pizza,Ribimiluss,,,,,,,21.4037096,42.0818924
 3951819586,,regional,бимекс,9:00-24:00,,yes,,,no,21.4093282,41.9748528
-4004645106,Cкoпje,chinese,Пекинг Гарден,Mo-Sa 11:00-24:00; Su 12:00-23:00,www.pekinggarden.mk,,+389 2 3221173,reservation@pekinggarden.mk,,21.4301301,41.9957324
+4004645106,Cкoпje,chinese,Пекинг Гарден,Mo-Sa 11:00-24:00; Su 12:00-23:00,www.pekinggarden.mk,,+389 2 3221 173,reservation@pekinggarden.mk,,21.4301301,41.9957324
 4016557277,Skopje,italian,Campione lounge Bar,Mo-Su 08:00-01:00,,,+389 70 250 261,,,21.4667276,41.9856123
 4016557278,Skopje,french,DejaVu Lounge,Mo-Su 08:00-01:00,,,,,,21.4661426,41.9859376
-4101107990,,,Makedonska sofra,Mo-Sa 08:00-01:00,,wlan,38978929010,,,21.4365756,41.9871974
+4101107990,,,Makedonska sofra,Mo-Sa 08:00-01:00,,wlan,+389 78 929 010,,,21.4365756,41.9871974
 4110147399,,balkan,Етно кујна Вила Елена,,,,,,,21.4448873,42.1382444
 4126731965,,international,Sky ресторанот,,,,,,,21.434577,41.9973163
 4149490289,Скопје,mexican,Amigos Мексиканска Кантина,"Mo-Th 08:00-24:00; Fr-Su 10:00-24:00",,,,,,21.4300742,41.9933026
@@ -236,14 +236,14 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 4318400296,,,Златна вилушка,,,,,,,21.4655483,41.9915744
 4327921318,,thai,Thong Thai,Sa-Su 10:00-01:00,,,38971661234,,outside,21.3986642,42.0034137
 4346542839,,,"Lounge Bar & Restaurant ""Square 21""",,,wlan,,,,21.4301208,41.9927317
-4347356991,,balkan,Чардак,,http://www.cardak.mk,wlan,38978465474,info@cardak.mk,,22.8581787,41.7058839
+4347356991,,balkan,Чардак,,http://www.cardak.mk,wlan,+389 78 465 474,info@cardak.mk,,22.8581787,41.7058839
 4355675606,,,Ресторан Златник,,,,,,,21.4826074,41.9788465
 4356193798,,,Кебапчилница Тасе,,,,,,,22.1966748,41.7388546
 4360780391,,regional,Домашна Кујна Прециз,,https://www.facebook.com/DomasnakujnaPreciz-109208438394027/,,,,,22.1926047,41.7369559
 4360781689,,,Рома,,,,,,,22.1922397,41.7382087
 4375878893,,,11,,,wlan,,,,20.9746292,42.0073877
 4376827005,,,Бане 2,,,,,,,20.804929,41.0035617
-4380494182,Прилеп,barbeque,Скара Стојче,,,,38948419100,,,21.552257,41.3431784
+4380494182,Прилеп,barbeque,Скара Стојче,,,,+389 48 419 100,,,21.552257,41.3431784
 4405634704,,,Ресторан Мал Одмор,,,,,,,20.7573957,41.7018616
 4406532855,,local,Вила Веранда,,,,,,outside,21.3679919,41.9953546
 4407370494,,,еквестријан,,,wlan,,,,21.4520843,41.9883207
@@ -260,7 +260,7 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 4459578969,Cкoпje,international,Амика,,,,,,,21.4355402,41.9949989
 4471884330,,international;italian;fish,Four,,,wlan,,,outside,21.427293,42.0059792
 4481662566,,italian,Дион,,,,,,,21.4335119,41.995703
-4489456010,Mavrovo and Rostushe,regional;coffee_shop;sandwich;ice_cream;international;turkish;steak_house,House of Miyaks Ethno Restaurant,Mo-Su 09:00-21:00,http://kukjanamijacite.mk,wlan,+389 070 378 333,contact@kukjanamijacite.mk,isolated,20.607177,41.6226607
+4489456010,Mavrovo and Rostushe,regional;coffee_shop;sandwich;ice_cream;international;turkish;steak_house,House of Miyaks Ethno Restaurant,Mo-Su 09:00-21:00,http://kukjanamijacite.mk,wlan,+389 70 378 333,contact@kukjanamijacite.mk,isolated,20.607177,41.6226607
 4491144570,Cкoпje,regional;international;barbecue,Ресторан Буре Срна,Mo-Su 08:00-00:00,https://buresrna.mk/,wlan,38923066676,,outside,21.3936186,42.0045887
 4502450789,,,Restoran Elita,,,,,,,20.9272881,41.9444009
 4502463695,,,Nes Komerc,,,,,,,20.9398801,41.976507
@@ -277,11 +277,11 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 4650542892,,,Гостилница Софра,,,,,,,21.5078989,41.9932328
 4650625589,,,Пицерија Кремисимо,,,,,,,21.5099084,41.9951884
 4683222726,Delchevo,seafood,Рибник Воденица,08:00 - 00:00,,,,,outside,22.8186239,41.9752689
-4718381271,Гевгелија,regional,Restoran Sarisa,,,,+389 78717607,,,22.4988477,41.1373679
+4718381271,Гевгелија,regional,Restoran Sarisa,,,,+389 78 717 607,,,22.4988477,41.1373679
 4720703993,,,Dojrana Skopje,,,,,,,21.4600445,41.9978436
 4740748226,,,Конак Јазбиње,,,,,,,21.6126147,41.9953625
 4741046037,,,Vodenicata 3,,,,,,,22.3598489,42.19038
-4746796221,,fish;burger;sandwich;breakfast;ice_cream;grill;cake;steak_house;pasta;balkan;diner;barbecue,Ресторан Грамоз,Mo-Su 08:00-11:00,,wlan,38970241533,ilirxhara@msn.com,,20.5266276,41.5215391
+4746796221,,fish;burger;sandwich;breakfast;ice_cream;grill;cake;steak_house;pasta;balkan;diner;barbecue,Ресторан Грамоз,Mo-Su 08:00-11:00,,wlan,+389 70 241 533,ilirxhara@msn.com,,20.5266276,41.5215391
 4753448922,,,Ultra,Mo-Sa 08:00-24:00,,,,,,20.9602367,41.9912803
 4771141151,,,Riben Restoran Bigor,,,,,,,20.8459093,41.7704206
 4804666922,,local,Vila Raskrsnica,,,,,,,21.1624357,40.9075981
@@ -303,27 +303,27 @@ id,addr:city,cuisine,name,opening_hours,website,internet_access,phone,email,smok
 5064700321,Визбегово,,Аликас,,,,,,,21.404415,42.0353232
 5072397092,,,Пицерија Фамилија,,,,,,,21.4633394,41.9914306
 5074216083,,,Er & Bi,,www.erbi.com.mk,,,contact@erbi.com.mk,,21.316191,41.9908973
-5075880321,,,БИЧ ЕНД ЛОУНЏ ЏОВАНИ,Mo-Sa 08:00-01:00; Su 09:00-00:00,,wlan,70230030,beachgiovani@gmail.com,,20.799108,41.0902867
+5075880321,,,БИЧ ЕНД ЛОУНЏ ЏОВАНИ,Mo-Sa 08:00-01:00; Su 09:00-00:00,,wlan,+389 70 230 030,beachgiovani@gmail.com,,20.799108,41.0902867
 5075885521,,,Salomon fud,,,,,,,22.6388602,41.4409617
 5123724239,,,Грин Вилиџ,Mo-Su 11:00-23:00,,,,,,21.5712443,41.9150979
-5131832941,Cкoпje,grill,7 Скара Ресторан,Mo-Th 08:00-24:00; Sa 08:00-01:00,http://7.mk/skara-restoran/,,38923224000,info@7.mk,,21.4277405,41.9948346
-5160613722,Cкoпje,,Мезе Бар,Fr-Su 08:00-01:00; Su 08:00-17:00; Mo-Th 08:00-00:00,https://www.facebook.com/mezebarskopjanka/,wlan,38926121214,,,21.4492023,41.9899769
+5131832941,Cкoпje,grill,7 Скара Ресторан,Mo-Th 08:00-24:00; Sa 08:00-01:00,http://7.mk/skara-restoran/,,+389 2 3224 000,info@7.mk,,21.4277405,41.9948346
+5160613722,Cкoпje,,Мезе Бар,Fr-Su 08:00-01:00; Su 08:00-17:00; Mo-Th 08:00-00:00,https://www.facebook.com/mezebarskopjanka/,wlan,+389 2 6121 214,,,21.4492023,41.9899769
 5184727125,,,Ubac,,,wlan,38972555005,,,21.3678533,42.0084679
-5224224121,,,Gostilnica Gurman,Mo-Su 07:00-22:00,,wlan,38923176200,ristovskidac@yahoo.com,,21.4223088,41.9916485
+5224224121,,,Gostilnica Gurman,Mo-Su 07:00-22:00,,wlan,+389 2 3176 200,ristovskidac@yahoo.com,,21.4223088,41.9916485
 5246219203,,macedonian,Баба Цана,,,,,,,21.4193986,41.9868025
-5268700370,Cкoпje,pizza,Pizza Jakomo,,http://www.pizzajakomo.com/,,+37976338668;+38978338668,,,21.3931934,42.0044372
+5268700370,Cкoпje,pizza,Pizza Jakomo,,http://www.pizzajakomo.com/,,+389 78 338 668,,,21.3931934,42.0044372
 5289706561,,,Star Ocean,,,,,,,21.4276864,41.9913338
 5292130848,,,Fitness house,,,,,,,21.4149006,42.0005187
 5321194052,Делчево,,Две Липи,,https://www.facebook.com/meanadvelipi/,,,,,22.7742657,41.9654757
-5334903322,,,Стар Лисец,,,wlan,38970756364,,,22.3309502,42.2075328
+5334903322,,,Стар Лисец,,,wlan,+389 70 756 364,,,22.3309502,42.2075328
 5334903323,,,Аквариум,24/7,,wlan,,,,22.335623,42.2026632
 5448461621,,,Скандал,,,,,,,21.3412151,41.0236829
 5448461921,,italian_pizza,Пица Александриа,Su-Th 09:00-00:00; Fr-Sa 09:00-01:00,http://www.pizzanemo.com,wlan,+389 46 253 355,contact@pizzanemo.com,,20.7981623,41.1122361
 5467884712,,,Segreto Plus,,,,,,,21.4808444,41.9837709
 5548809221,,local;barbecue,кај сердарот,,,,,,,21.4366123,41.9995926
 5561692079,,,Тарапана,,,,,,,21.4565032,41.9729164
-5572053321,,chicken;diner;beef_bowl;american;ice_cream;local;tea;pizza;burger;cake;pasta;french;italian_pizza;seafood;crepe;pancake;sandwich;coffee_shop;balkan;mediterranean;croatian;fish;kebab;breakfast;grill,Дебар Маало,Su-Th 08:00-00:30; Fr-Sa 08:00-01:00,,wlan,38976219654,,,21.4205747,42.0013292
+5572053321,,chicken;diner;beef_bowl;american;ice_cream;local;tea;pizza;burger;cake;pasta;french;italian_pizza;seafood;crepe;pancake;sandwich;coffee_shop;balkan;mediterranean;croatian;fish;kebab;breakfast;grill,Дебар Маало,Su-Th 08:00-00:30; Fr-Sa 08:00-01:00,,wlan,+389 76 219 654,,,21.4205747,42.0013292
 5599976622,,,Mermaid Terrace,,,,,,,20.7824024,40.9617356
 5602643621,,,Pizza Aleksandrija,,,,,,,20.7980562,41.1121475
 5614557098,,,Осоговска Куќа,,,,,,,22.3572149,41.9945499
-5624670966,,balkan,МЦМ Мезе Бар,24/7,,wlan,38970250420,mezebarmcm@gmail.com,,21.4235595,42.0023813
+5624670966,,balkan,МЦМ Мезе Бар,24/7,,wlan,+389 70 250 420,mezebarmcm@gmail.com,,21.4235595,42.0023813
