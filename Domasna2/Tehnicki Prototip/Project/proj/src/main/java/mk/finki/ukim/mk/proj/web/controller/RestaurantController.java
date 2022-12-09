@@ -45,7 +45,12 @@ public class RestaurantController {
     public String getRestaurantById(@PathVariable(value = "id") Long id, Model model){
         Restaurants restaurant = restaurantService.getRestaurantById(id).orElseThrow(RestaurantDoesNotExistException::new);
         model.addAttribute("restaurant",restaurant);
+        model.addAttribute("from","A");
         return "getRestaurant";
+    }
+    @GetMapping(value = "chooseFilter")
+    public String chooseFilter(Model model){
+        return "chooseFilter";
     }
     @GetMapping(value = "/restaurantN")
     public String getRestaurantsByName(@RequestParam(value = "restaurantName", required = false) String restaurantName, Model model) {
@@ -56,19 +61,22 @@ public class RestaurantController {
         else{
             restaurants = restaurantService.getAllRestaurants();
         }
+        model.addAttribute("from","N");
         model.addAttribute("restaurants",restaurants);
         return "searchRestaurantsByName";
     }
     @GetMapping(value = "/restaurantC")
     public String getRestaurantsByCuisine(@RequestParam(value = "cuisine", required = false) String cuisine, Model model) {
         List<Restaurants> restaurants = new ArrayList<>();
-        if (cuisine!=null){
+        if (cuisine!=null && !cuisine.equals("-Cuisine-")){
             restaurants = restaurantService.getRestaurantByCuisine(cuisine.toUpperCase());
         }
         else{
             restaurants = restaurantService.getAllRestaurants();
         }
+        model.addAttribute("from","C");
         model.addAttribute("restaurants",restaurants);
+        model.addAttribute("cuisines",restaurantService.getCuisines());
         return "searchRestaurantsByCuisine";
     }
     @GetMapping(value = "/addFav/{id}")
