@@ -86,6 +86,12 @@ public class RestaurantController {
         model.addAttribute("user",user);
         return "favorites";
     }
+    @GetMapping(value = "/favourites")
+    public String getAllFavourites(HttpSession session, Model model){
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user",user);
+        return "favorites";
+    }
 // REST CONTROLLER VERSION
 //    public ResponseEntity<List<Restaurants>> getAllRestaurants() {
 //        List<Restaurants> restaurants = restaurantService.getAllRestaurants();
