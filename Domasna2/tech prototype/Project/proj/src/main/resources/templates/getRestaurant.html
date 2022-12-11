@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-
+<a class="btn btn-secondary" th:href="@{/restaurants/index}">Show All Restaurants</a>
 <div class="container mb-4">
     <a th:href="@{/restaurants/addFav/{id} (id=${restaurant.getId()})}">Add To Favorites</a>
     <h2 th:text="${restaurant.getName()}"></h2><br>
