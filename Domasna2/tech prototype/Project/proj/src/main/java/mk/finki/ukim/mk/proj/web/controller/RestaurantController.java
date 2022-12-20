@@ -47,10 +47,12 @@ public class RestaurantController {
         return "allRestaurants";
     }
     @GetMapping(value = "/{id}")
-    public String getRestaurantById(@PathVariable(value = "id") Long id, Model model){
+    public String getRestaurantById(@PathVariable(value = "id") Long id,HttpSession session, Model model){
         Restaurants restaurant = restaurantService.getRestaurantById(id).orElseThrow(RestaurantDoesNotExistException::new);
+        User user = (User) session.getAttribute("user");
         model.addAttribute("restaurant",restaurant);
         model.addAttribute("from","A");
+        model.addAttribute("user",user);
         return "getRestaurant";
     }
     @GetMapping(value = "chooseFilter")
@@ -88,6 +90,13 @@ public class RestaurantController {
     public String addRestaurantToFavs(@PathVariable(value = "id") Long id, HttpSession session, Model model){
         User user = (User) session.getAttribute("user");
         user.getFavorites().add(restaurantService.getRestaurantById(id).orElseThrow(() -> new RestaurantDoesNotExistException()));
+        model.addAttribute("user",user);
+        return "favorites";
+    }
+    @GetMapping(value = "/removeFav/{id}")
+    public String removeRestaurantFromFavs(@PathVariable(value = "id") Long id, HttpSession session, Model model){
+        User user = (User) session.getAttribute("user");
+        user.getFavorites().remove(restaurantService.getRestaurantById(id).orElseThrow());
         model.addAttribute("user",user);
         return "favorites";
     }
