@@ -1,90 +1,73 @@
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:height="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <title>Restaurant Information</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <style type="text/css">
-        body {
-            width: 800px;
-            margin: auto;
-        }
-    </style>
-</head>
-<body>
-<a class="btn btn-secondary" th:href="@{/restaurants/index}">Show All Restaurants</a>
-<div class="container mb-4">
-    <div class="d-flex justify-content-end">
-        <div th:if="${!user.getFavorites().contains(restaurant)}">
-            <a class="btn btn-danger" th:href="@{/restaurants/addFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-            </svg>Add To Favorites</a>
+<div class="container body" xmlns:th="http://www.thymeleaf.org">
+    <a class="btn btn-secondary" th:href="@{/restaurants/index}">Show All Restaurants</a>
+    <div class="container mb-4">
+        <div class="d-flex justify-content-end">
+            <div th:if="${!user.getFavorites().contains(restaurant)}">
+                <a class="btn btn-danger" th:href="@{/restaurants/addFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                </svg>Add To Favorites</a>
+            </div>
+            <div th:if="${user.getFavorites().contains(restaurant)}">
+                <a class="btn btn-danger" th:href="@{/restaurants/removeFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                </svg>Remove From Favorites</a>
+            </div>
         </div>
-        <div th:if="${user.getFavorites().contains(restaurant)}">
-            <a class="btn btn-danger" th:href="@{/restaurants/removeFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-            </svg>Remove From Favorites</a>
+
+        <h2 th:text="${restaurant.getName()}"></h2><br>
+        <div th:if="${restaurant.getCuisine()!=null}">
+            <h5><b>Cuisine:</b></h5>
+            <h5 th:text="${restaurant.getCuisine()}"></h5>
         </div>
-    </div>
-
-    <h2 th:text="${restaurant.getName()}"></h2><br>
-    <div th:if="${restaurant.getCuisine()!=null}">
-        <h5><b>Cuisine:</b></h5>
-        <h5 th:text="${restaurant.getCuisine()}"></h5>
-    </div>
-    <div th:if="${restaurant.getOpening_hours()!=null}">
-        <h5><b>Working hours:</b></h5>
-        <h5 th:text="${restaurant.getOpening_hours()}"></h5>
-    </div>
-    <div th:if="${restaurant.getPhone()!= null or restaurant.getEmail()!=null}">
-        <h5><b>Contact</b></h5>
-        <div th:if="${restaurant.getPhone()!= null}">
-            <h5 th:text="${restaurant.getPhone()}"></h5>
+        <div th:if="${restaurant.getOpening_hours()!=null}">
+            <h5><b>Working hours:</b></h5>
+            <h5 th:text="${restaurant.getOpening_hours()}"></h5>
         </div>
-        <div th:if="${restaurant.getEmail()!=null}">
-            <h5 th:text="${restaurant.getEmail()}"></h5>
+        <div th:if="${restaurant.getPhone()!= null or restaurant.getEmail()!=null}">
+            <h5><b>Contact</b></h5>
+            <div th:if="${restaurant.getPhone()!= null}">
+                <h5 th:text="${restaurant.getPhone()}"></h5>
+            </div>
+            <div th:if="${restaurant.getEmail()!=null}">
+                <h5 th:text="${restaurant.getEmail()}"></h5>
+            </div>
         </div>
+        <div th:if="${restaurant.getWebsite()!=null}">
+            <h5><b>Website:</b></h5>
+            <h5 th:text="${restaurant.getWebsite()}"></h5>
+        </div>
+        <div th:if="${restaurant.getInternet_access()!=null}">
+            <h5><b>Internet Access:</b></h5>
+            <h5 th:text="${restaurant.getInternet_access()}"></h5>
+        </div>
+        <input type="hidden" id="lon" th:value="${restaurant.getLon()}">
+        <input type="hidden" id="lat" th:value="${restaurant.getLat()}">
+        <div th:if="${restaurant.getAddrCity()!=null}">
+            <h5><b>City:</b></h5>
+            <h5 th:text="${restaurant.getAddrCity()}"></h5>
+        </div>
+        <div id="mapdiv"></div>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script>
+            let lon = document.getElementById("lon").value
+            let lat = document.getElementById("lat").value
+            map = new OpenLayers.Map("mapdiv");
+            map.addLayer(new OpenLayers.Layer.OSM());
+
+            var lonLat = new OpenLayers.LonLat(lon ,lat)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject() // to Spherical Mercator Projection
+                );
+
+            var zoom=16;
+
+            var markers = new OpenLayers.Layer.Markers( "Markers" );
+            map.addLayer(markers);
+
+            markers.addMarker(new OpenLayers.Marker(lonLat));
+
+            map.setCenter (lonLat, zoom);
+        </script>
     </div>
-    <div th:if="${restaurant.getWebsite()!=null}">
-        <h5><b>Website:</b></h5>
-        <h5 th:text="${restaurant.getWebsite()}"></h5>
-    </div>
-    <div th:if="${restaurant.getInternet_access()!=null}">
-        <h5><b>Internet Access:</b></h5>
-        <h5 th:text="${restaurant.getInternet_access()}"></h5>
-    </div>
-    <input type="hidden" id="lon" th:value="${restaurant.getLon()}">
-    <input type="hidden" id="lat" th:value="${restaurant.getLat()}">
-    <div th:if="${restaurant.getAddrCity()!=null}">
-        <h5><b>City:</b></h5>
-        <h5 th:text="${restaurant.getAddrCity()}"></h5>
-    </div>
-    <div id="mapdiv"></div>
-    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-    <script>
-        let lon = document.getElementById("lon").value
-        let lat = document.getElementById("lat").value
-        map = new OpenLayers.Map("mapdiv");
-        map.addLayer(new OpenLayers.Layer.OSM());
-
-        var lonLat = new OpenLayers.LonLat(lon ,lat)
-            .transform(
-                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
-                map.getProjectionObject() // to Spherical Mercator Projection
-            );
-
-        var zoom=16;
-
-        var markers = new OpenLayers.Layer.Markers( "Markers" );
-        map.addLayer(markers);
-
-        markers.addMarker(new OpenLayers.Marker(lonLat));
-
-        map.setCenter (lonLat, zoom);
-    </script>
 </div>
-</body>
-</html>

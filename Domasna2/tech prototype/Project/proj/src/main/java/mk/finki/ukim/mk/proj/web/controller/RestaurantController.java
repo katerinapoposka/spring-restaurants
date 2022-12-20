@@ -14,13 +14,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/restaurants")
-@SessionAttributes("user")
 public class RestaurantController {
     private final RestaurantService restaurantService;
     private final UserService userService;
@@ -30,12 +31,12 @@ public class RestaurantController {
         this.userService = userService;
     }
     @GetMapping()
-    public String main(HttpSession session, Model model){
-        return "main";
+    public String main(Model model){
+        model.addAttribute("bodyContent","main");
+        return "master-template";
     }
     @GetMapping("/index")
-    public String index(HttpSession session, Model model){
-        session.setAttribute("user",userService.findById(1L));
+    public String index(Model model){
         return "redirect:/restaurants/all/0";
     }
     @GetMapping(value = "/all/{pageId}")
@@ -44,20 +45,23 @@ public class RestaurantController {
         Page<Restaurants> restaurants = restaurantService.getAllRestaurantsPageable(pageWithTenRestaurants);
         model.addAttribute("restaurants",restaurants);
         model.addAttribute("pageId",pageId+1);
-        return "allRestaurants";
+        model.addAttribute("bodyContent","allRestaurants");
+        return "master-template";
     }
     @GetMapping(value = "/{id}")
-    public String getRestaurantById(@PathVariable(value = "id") Long id,HttpSession session, Model model){
+    public String getRestaurantById(@PathVariable(value = "id") Long id, HttpServletRequest req, Model model){
         Restaurants restaurant = restaurantService.getRestaurantById(id).orElseThrow(RestaurantDoesNotExistException::new);
-        User user = (User) session.getAttribute("user");
+        User user = userService.findByUsername(req.getRemoteUser());
         model.addAttribute("restaurant",restaurant);
         model.addAttribute("from","A");
         model.addAttribute("user",user);
-        return "getRestaurant";
+        model.addAttribute("bodyContent","getRestaurant");
+        return "master-template";
     }
-    @GetMapping(value = "chooseFilter")
+    @GetMapping(value = "/chooseFilter")
     public String chooseFilter(Model model){
-        return "chooseFilter";
+        model.addAttribute("bodyContent","chooseFilter");
+        return "master-template";
     }
     @GetMapping(value = "/restaurantN")
     public String getRestaurantsByName(@RequestParam(value = "restaurantName", required = false) String restaurantName, Model model) {
@@ -70,7 +74,8 @@ public class RestaurantController {
         }
         model.addAttribute("from","N");
         model.addAttribute("restaurants",restaurants);
-        return "searchRestaurantsByName";
+        model.addAttribute("bodyContent","searchRestaurantsByName");
+        return "master-template";
     }
     @GetMapping(value = "/restaurantC")
     public String getRestaurantsByCuisine(@RequestParam(value = "cuisine", required = false) String cuisine, Model model) {
@@ -84,27 +89,32 @@ public class RestaurantController {
         model.addAttribute("from","C");
         model.addAttribute("restaurants",restaurants);
         model.addAttribute("cuisines",restaurantService.getCuisines());
-        return "searchRestaurantsByCuisine";
+        model.addAttribute("bodyContent","searchRestaurantsByCuisine");
+        return "master-template";
     }
     @GetMapping(value = "/addFav/{id}")
-    public String addRestaurantToFavs(@PathVariable(value = "id") Long id, HttpSession session, Model model){
-        User user = (User) session.getAttribute("user");
-        user.getFavorites().add(restaurantService.getRestaurantById(id).orElseThrow(() -> new RestaurantDoesNotExistException()));
+    public String addRestaurantToFavs(@PathVariable(value = "id") Long id, HttpServletRequest req, Model model){
+        User user = userService.findByUsername(req.getRemoteUser());
+        user=userService.addToFavourites(user.getId(),id);
         model.addAttribute("user",user);
-        return "favorites";
+        model.addAttribute("bodyContent","favorites");
+        return "master-template";
     }
     @GetMapping(value = "/removeFav/{id}")
-    public String removeRestaurantFromFavs(@PathVariable(value = "id") Long id, HttpSession session, Model model){
-        User user = (User) session.getAttribute("user");
-        user.getFavorites().remove(restaurantService.getRestaurantById(id).orElseThrow());
+    public String removeRestaurantFromFavs(@PathVariable(value = "id") Long id, HttpServletRequest req, Model model){
+        User user = userService.findByUsername(req.getRemoteUser());
+        user=userService.removeFavourites(user.getId(),id);
+        //user.getFavorites().remove(restaurantService.getRestaurantById(id).orElseThrow());
         model.addAttribute("user",user);
-        return "favorites";
+        model.addAttribute("bodyContent","favorites");
+        return "master-template";
     }
     @GetMapping(value = "/favourites")
-    public String getAllFavourites(HttpSession session, Model model){
-        User user = (User) session.getAttribute("user");
+    public String getAllFavourites(HttpServletRequest req, Model model){
+        User user = userService.findByUsername(req.getRemoteUser());
         model.addAttribute("user",user);
-        return "favorites";
+        model.addAttribute("bodyContent","favorites");
+        return "master-template";
     }
 // REST CONTROLLER VERSION
 //    public ResponseEntity<List<Restaurants>> getAllRestaurants() {
