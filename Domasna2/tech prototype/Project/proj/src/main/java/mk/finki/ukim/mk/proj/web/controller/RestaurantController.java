@@ -5,6 +5,9 @@ import mk.finki.ukim.mk.proj.model.User;
 import mk.finki.ukim.mk.proj.model.exceptions.RestaurantDoesNotExistException;
 import mk.finki.ukim.mk.proj.service.RestaurantService;
 import mk.finki.ukim.mk.proj.service.UserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -33,12 +36,14 @@ public class RestaurantController {
     @GetMapping("/index")
     public String index(HttpSession session, Model model){
         session.setAttribute("user",userService.findById(1L));
-        return "redirect:/restaurants/all";
+        return "redirect:/restaurants/all/0";
     }
-    @GetMapping(value = "/all")
-    public String getAllRestaurants(Model model){
-        List<Restaurants> restaurants = restaurantService.getAllRestaurants();
+    @GetMapping(value = "/all/{pageId}")
+    public String getAllRestaurants(@PathVariable(value = "pageId") int pageId, Model model){
+        Pageable pageWithTenRestaurants = PageRequest.of(0,10*(pageId+1));
+        Page<Restaurants> restaurants = restaurantService.getAllRestaurantsPageable(pageWithTenRestaurants);
         model.addAttribute("restaurants",restaurants);
+        model.addAttribute("pageId",pageId+1);
         return "allRestaurants";
     }
     @GetMapping(value = "/{id}")
