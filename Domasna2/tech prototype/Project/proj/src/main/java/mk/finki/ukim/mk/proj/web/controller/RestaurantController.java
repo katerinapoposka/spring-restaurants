@@ -51,7 +51,8 @@ public class RestaurantController {
     @GetMapping(value = "/{id}")
     public String getRestaurantById(@PathVariable(value = "id") Long id, HttpServletRequest req, Model model){
         Restaurants restaurant = restaurantService.getRestaurantById(id).orElseThrow(RestaurantDoesNotExistException::new);
-        User user = userService.findByUsername(req.getRemoteUser());
+        User user = req.getRemoteUser()!=null ? userService.findByUsername(req.getRemoteUser()) : null;
+
         model.addAttribute("restaurant",restaurant);
         model.addAttribute("from","A");
         model.addAttribute("user",user);
