@@ -48,8 +48,8 @@
             <h5><b>City:</b></h5>
             <h5 th:text="${restaurant.getAddrCity()}"></h5>
         </div>
-        <div id="mapdiv"></div>
-        <script th:inline="javascript" src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <div id="mapdiv" style="width: 100%; height: 400px;"></div>
+        <script th:inline="javascript" src="https://www.openlayers.org/api/OpenLayers.js"></script>
         <script th:inline="javascript">
             let lon = document.getElementById("lon").value
             let lat = document.getElementById("lat").value
