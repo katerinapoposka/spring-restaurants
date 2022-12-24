@@ -1,32 +1,32 @@
-<div class="container body" xmlns:th="http://www.thymeleaf.org">
-    <a class="btn btn-secondary" th:href="@{/restaurants/index}">Show All Restaurants</a>
-    <div class="container mb-4">
+<div class="body-getRestaurants" xmlns:th="http://www.thymeleaf.org">
+    <a class="btn btn-secondary-show" th:href="@{/restaurants/index}">SHOW ALL RESTAURANTS</a>
+    <div class="mb-4-getRestaurants">
         <div class="d-flex justify-content-end">
             <div th:if="${user!=null}">
                 <div th:if="${!user.getFavorites().contains(restaurant)}">
-                    <a class="btn btn-danger" th:href="@{/restaurants/addFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <a class="btn btn-danger-addFav" th:href="@{/restaurants/addFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                    </svg>Add To Favorites</a>
+                    </svg>ADD TO FAVOURITES</a>
                 </div>
                 <div th:if="${user.getFavorites().contains(restaurant)}">
-                    <a class="btn btn-danger" th:href="@{/restaurants/removeFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <a class="btn btn-danger-removeFav" th:href="@{/restaurants/removeFav/{id} (id=${restaurant.getId()})}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                    </svg>Remove From Favorites</a>
+                    </svg>REMOVE FROM FAVOURITES</a>
                 </div>
             </div>
         </div>
 
-        <h2 th:text="${restaurant.getName()}"></h2><br>
-        <div th:if="${restaurant.getCuisine()!=null}">
-            <h5><b>Cuisine:</b></h5>
+        <h2 class="name-Restaurant" th:text="${restaurant.getName()}"></h2><br>
+        <div class="name" th:if="${restaurant.getCuisine()!=null}">
+            <h5><b>CUSINE:</b></h5>
             <h5 th:text="${restaurant.getCuisine()}"></h5>
         </div>
-        <div th:if="${restaurant.getOpening_hours()!=null}">
-            <h5><b>Working hours:</b></h5>
+        <div class="name" th:if="${restaurant.getOpening_hours()!=null}">
+            <h5><b>WORKING HOURS:</b></h5>
             <h5 th:text="${restaurant.getOpening_hours()}"></h5>
         </div>
-        <div th:if="${restaurant.getPhone()!= null or restaurant.getEmail()!=null}">
-            <h5><b>Contact</b></h5>
+        <div class="name" th:if="${restaurant.getPhone()!= null or restaurant.getEmail()!=null}">
+            <h5><b>CONTACT</b></h5>
             <div th:if="${restaurant.getPhone()!= null}">
                 <h5 th:text="${restaurant.getPhone()}"></h5>
             </div>
@@ -34,21 +34,21 @@
                 <h5 th:text="${restaurant.getEmail()}"></h5>
             </div>
         </div>
-        <div th:if="${restaurant.getWebsite()!=null}">
-            <h5><b>Website:</b></h5>
+        <div class="name" th:if="${restaurant.getWebsite()!=null}">
+            <h5><b>WEBSITE:</b></h5>
             <h5 th:text="${restaurant.getWebsite()}"></h5>
         </div>
-        <div th:if="${restaurant.getInternet_access()!=null}">
-            <h5><b>Internet Access:</b></h5>
+        <div class="name" th:if="${restaurant.getInternet_access()!=null}">
+            <h5><b>INTRNET ACCESS:</b></h5>
             <h5 th:text="${restaurant.getInternet_access()}"></h5>
         </div>
         <input type="hidden" id="lon" th:value="${restaurant.getLon()}">
         <input type="hidden" id="lat" th:value="${restaurant.getLat()}">
-        <div th:if="${restaurant.getAddrCity()!=null}">
-            <h5><b>City:</b></h5>
+        <div class="name" th:if="${restaurant.getAddrCity()!=null}">
+            <h5><b>CITY:</b></h5>
             <h5 th:text="${restaurant.getAddrCity()}"></h5>
         </div>
-        <div id="mapdiv" style="width: 100%; height: 400px;"></div>
+        <div id="mapdiv" style="width: 40%; height: 280px;"></div>
         <script th:inline="javascript" src="https://www.openlayers.org/api/OpenLayers.js"></script>
         <script th:inline="javascript">
             let lon = document.getElementById("lon").value
@@ -71,5 +71,101 @@
 
             map.setCenter (lonLat, zoom);
         </script>
+        <style>
+        .body-getRestaurants
+          {
+            background-image:url('https://images.pexels.com/photos/4253128/pexels-photo-4253128.jpeg');
+            background-size: cover;
+             background-position: center;
+            background-repeat: no-repeat;
+            margin: auto;
+            width: auto;
+            height: 665px;
+            overflow: hidden;
+            opacity: 95%;
+            font-family: JetBrains Mono;
+            color: white;
+            }
+            .body-getRestaurants> div > div > h5 > b
+            {
+            font-weight: bold;
+            }
+            .mb-4-getRestaurants{
+            background-color: #03030782;
+            margin-top: -0.0%;
+             width:100%;
+             height:104%;
+             position: fixed;
+            }
+            #OpenLayers_Map_2_OpenLayers_ViewPort{
+             position:absolute;
+             margin-left:5%;
+
+           }
+           div.name{
+           margin-left:2%;
+           }
+           #mapdiv
+           {
+           display:inline-block;
+           }
+           .name-Restaurant{
+               font-size: 260%;
+              margin-top: 2%;
+              margin-left: 2%;
+           }
+           .btn-secondary-show{
+    margin-left: 82%;
+    margin-top: 2.5%;
+    opacity: 89%;
+    position: fixed;
+    display: inline-block;
+    font-size: 14px;
+    padding: 15px 30px;
+    overflow: hidden;
+    z-index: 1;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    font-weight: 600;
+           }
+           .btn-danger-addFav
+           {
+     opacity: 89%;
+    position: fixed;
+    display: inline-block;
+    font-size: 14px;
+    padding: 15px 30px;
+    overflow: hidden;
+    z-index: 1;
+    color: #fff;
+    background-color: #d12d2dcf;
+    border: none;
+    font-weight: 600;
+    margin-bottom: -10%;
+    margin-left: -35%;
+    margin-top: 2.5%;
+           }
+           .btn-danger-removeFav
+           {
+           opacity: 89%;
+    position: fixed;
+    display: inline-block;
+    font-size: 14px;
+    padding: 15px 15px;
+    overflow: hidden;
+    z-index: 1;
+    color: #fff;
+    background-color: #d12d2dcf;
+    border: none;
+    font-weight: 600;
+    margin-bottom: -10%;
+    margin-left: -35%;
+    margin-top: 2.5%;
+           }
+
+
+
+        </style>
     </div>
 </div>
