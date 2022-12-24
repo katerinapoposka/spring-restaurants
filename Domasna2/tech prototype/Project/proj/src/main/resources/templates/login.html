@@ -1,3 +1,4 @@
+<!--
 <div class="container body" xmlns:th="http://www.thymeleaf.org">
   <form class="form-signin mt-xl-5" method="post" action="/login">
     <h2 class="form-signin-heading">Sign in</h2>
@@ -17,4 +18,167 @@
     <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
   <a href="/register" class="btn btn-block btn-light">Register here</a>
+</div>
+-->
+<style>
+
+.container body{
+    width:92.5vh;
+    height:1000px;
+    margin-bottom:-50px;
+}
+
+
+#f3 {
+    display:flex;
+    flex: 0 1 100vw;
+    height: 99.2vh;
+
+    margin-top:-50px;
+    margin-bottom:-50px;
+
+    color:white;
+    background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') no-repeat bottom;
+    /*background-size: 100% 750px;*/
+}
+  .card{
+      margin:20px 480px;
+    border:none;
+  }
+
+  .box {
+    width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 9%;
+    left: 33%;
+    background: #191919;
+      opacity:84%;
+  ;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 100px
+  }
+
+  .box input[type="text"],
+  .box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+  }
+
+  .box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+  }
+
+  .box input[type="text"]:focus,
+  .box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+  }
+
+  .box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+  }
+
+  .box input[type="submit"]:hover {
+    background: #2ecc71
+  }
+  #reglink
+  {
+      font-size:15px;
+      color: #2ecc71;
+  }
+
+  .forgot {
+    text-decoration: underline
+  }
+  #submit
+  {
+
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 20px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer;
+
+  }
+#newhere
+{
+    font-size:15px;
+}
+
+#submit:hover{
+    background-color: grey;
+    border-color: grey;
+    transition: .3s;
+}
+
+
+</style>
+
+<div xmlns:th="http://www.thymeleaf.org">
+ <div id="f3">
+
+
+            <div class="card">
+                <form class="box" method="post" action="/login">
+                    <h1>Log in</h1> <p class="text-muted">
+                    <div id="newhere">
+                        New here? <a id="reglink" href="/register" >Click to register</a>
+
+                    </div>
+                </p>
+                    <p>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                               autofocus="">
+                    </p>
+                    <p>
+                        <label for="password" >Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                               required="">
+                    </p>
+
+                    <div th:text="${param.error}" class="text-danger"></div>
+
+                    <button id="submit"  type="submit">Log in</button>
+                    <br>
+                    <br>
+
+                </form>
+
+            </div>
+
+
+ </div>
 </div>
