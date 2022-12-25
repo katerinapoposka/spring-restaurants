@@ -26,9 +26,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/restaurants", "/restaurants/index", "/restaurants/all/*", "/restaurants/chooseFilter", "/restaurants/restaurantC",
-                        "/restaurants/restaurantN", "/restaurants/*","/register").permitAll()
                 .antMatchers("/restaurants/addFav/*","/restaurants/removeFav/","/restaurants/favourites").hasRole("USER")
+                .antMatchers("/","/restaurants", "/restaurants/index", "/restaurants/all/*", "/restaurants/chooseFilter", "/restaurants/restaurantC",
+                        "/restaurants/restaurantN", "/restaurants/*","/register").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()

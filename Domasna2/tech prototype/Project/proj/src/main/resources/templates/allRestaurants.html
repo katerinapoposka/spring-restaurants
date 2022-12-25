@@ -1,12 +1,12 @@
 <div class="all" xmlns:th="http://www.thymeleaf.org">
     <div class="container mb-4">
-        <a class="btn btn-secondary nazad" th:href="@{/restaurants}">Back to main page</a>
+        <a class="nazad" th:href="@{/restaurants}">Back to main page</a>
     </div>
     <div class="container mb-4">
         <div class="row">
 
             <div class="container favo">
-                <div  th:each="restaurant : ${restaurants}">
+                <div th:each="restaurant : ${restaurants}">
                     <img class="sliki" src="https://source.unsplash.com/200x200/?food" height="200px" width="200px">
                     <p class="ime" th:text="${restaurant.getName()}"></p>
                     <a class="btn showmore " th:href="@{/restaurants/{id} (id=${restaurant.getId()})}">
