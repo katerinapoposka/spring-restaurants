@@ -1,0 +1,17 @@
+<div class="body" xmlns:th="http://www.thymeleaf.org">
+    <main>
+        <div class="container mb-4">
+            <div class="row">
+                <div class="container favo">
+                    <div  th:each="restaurant : ${restaurants}">
+                        <img class="sliki" src="https://source.unsplash.com/200x200/?food" height="200px" width="200px">
+                        <p class="ime" th:text="${restaurant.getName()}"></p>
+                        <a class="btn showmore " th:href="@{/restaurants/{id} (id=${restaurant.getId()})}">
+                            More info
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -64,6 +64,13 @@ public class RestaurantController {
         model.addAttribute("bodyContent","chooseFilter");
         return "master-template";
     }
+
+    @GetMapping(value = "/search")
+    public String searchRestaurants(Model model){
+        model.addAttribute("cuisines",restaurantService.getCuisines());
+        model.addAttribute("bodyContent","search");
+        return "master-template";
+    }
     @GetMapping(value = "/restaurantN")
     public String getRestaurantsByName(@RequestParam(value = "restaurantName", required = false) String restaurantName, Model model) {
         List<Restaurants> restaurants = new ArrayList<>();
@@ -73,9 +80,8 @@ public class RestaurantController {
         else{
             restaurants = restaurantService.getAllRestaurants();
         }
-        model.addAttribute("from","N");
         model.addAttribute("restaurants",restaurants);
-        model.addAttribute("bodyContent","searchRestaurantsByName");
+        model.addAttribute("bodyContent","searchRestaurants");
         return "master-template";
     }
     @GetMapping(value = "/restaurantC")
@@ -87,10 +93,8 @@ public class RestaurantController {
         else{
             restaurants = restaurantService.getAllRestaurants();
         }
-        model.addAttribute("from","C");
         model.addAttribute("restaurants",restaurants);
-        model.addAttribute("cuisines",restaurantService.getCuisines());
-        model.addAttribute("bodyContent","searchRestaurantsByCuisine");
+        model.addAttribute("bodyContent","searchRestaurants");
         return "master-template";
     }
     @GetMapping(value = "/addFav/{id}")

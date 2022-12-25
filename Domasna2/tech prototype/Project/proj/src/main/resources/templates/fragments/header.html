@@ -18,17 +18,17 @@
           </li>
           <li class="nav-item" sec:authorize="isAuthenticated()">
             <a class="btn btn-light btn-sm ml-3" href="/logout">
-              <i class="fa fa-shopping-cart"></i> LOGOUT
+              LOGOUT
             </a>
           </li>
           <li class="nav-item" sec:authorize="!isAuthenticated()">
             <a class="btn btn-light btn-sm ml-3" href="/login">
-              <i class="fa fa-shopping-cart"></i> SIGN IN
+              SIGN IN
             </a>
           </li>
           <li class="nav-item" sec:authorize="!isAuthenticated()">
             <a class="btn btn-light btn-sm ml-3" href="/register">
-              <i class="fa fa-shopping-cart"></i> REGISTER
+              REGISTER
             </a>
           </li>
         </ul>
