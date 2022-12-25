@@ -9,9 +9,8 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
         <ul class="nav navbar-nav navbar-right">
-
           <li class="nav-item" sec:authorize="isAuthenticated()">
-            <a class="nav-link" href="#">
+            <a class="btn btn-light btn-sm ml-3" href="#">
               <th:block th:if="${#request.getRemoteUser() != null}"
                         th:text="${#request.getRemoteUser()}"></th:block>
             </a>
