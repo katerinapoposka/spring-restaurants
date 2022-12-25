@@ -22,7 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean install -Dfile 'D:\a\DIANS-proekt\DIANS-proekt\Domasna3\Project\proj\pom.xml'
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
