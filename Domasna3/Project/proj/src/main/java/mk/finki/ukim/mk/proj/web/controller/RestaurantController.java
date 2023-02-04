@@ -8,16 +8,11 @@ import mk.finki.ukim.mk.proj.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,7 +31,7 @@ public class RestaurantController {
         return "master-template";
     }
     @GetMapping("/index")
-    public String index(Model model){
+    public String index(){
         return "redirect:/restaurants/all/0";
     }
     @GetMapping(value = "/all/{pageId}")
@@ -73,7 +68,7 @@ public class RestaurantController {
     }
     @GetMapping(value = "/restaurantN")
     public String getRestaurantsByName(@RequestParam(value = "restaurantName", required = false) String restaurantName, Model model) {
-        List<Restaurants> restaurants = new ArrayList<>();
+        List<Restaurants> restaurants;
         if (restaurantName!=null){
             restaurants = restaurantService.getRestaurantByName(restaurantName);
         }
@@ -86,7 +81,7 @@ public class RestaurantController {
     }
     @GetMapping(value = "/restaurantC")
     public String getRestaurantsByCuisine(@RequestParam(value = "cuisine", required = false) String cuisine, Model model) {
-        List<Restaurants> restaurants = new ArrayList<>();
+        List<Restaurants> restaurants;
         if (cuisine!=null && !cuisine.equals("-Cuisine-")){
             restaurants = restaurantService.getRestaurantByCuisine(cuisine.toUpperCase());
         }
@@ -109,7 +104,6 @@ public class RestaurantController {
     public String removeRestaurantFromFavs(@PathVariable(value = "id") Long id, HttpServletRequest req, Model model){
         User user = userService.findByUsername(req.getRemoteUser());
         user=userService.removeFavourites(user.getId(),id);
-        //user.getFavorites().remove(restaurantService.getRestaurantById(id).orElseThrow());
         model.addAttribute("user",user);
         model.addAttribute("bodyContent","favorites");
         return "master-template";
@@ -121,34 +115,4 @@ public class RestaurantController {
         model.addAttribute("bodyContent","favorites");
         return "master-template";
     }
-// REST CONTROLLER VERSION
-//    public ResponseEntity<List<Restaurants>> getAllRestaurants() {
-//        List<Restaurants> restaurants = restaurantService.getAllRestaurants();
-//        return new ResponseEntity<>(restaurants, HttpStatus.OK);
-//    }
-
-//    @GetMapping(value = "/{id}")
-//    public ResponseEntity<Restaurants> getRestaurantById(@PathVariable(value = "id") Long id){
-//        Restaurants restaurant = restaurantService.getRestaurantById(id).orElseThrow(RestaurantDoesNotExistException::new);
-//        return new ResponseEntity<>(restaurant, HttpStatus.OK);
-//    }
-
-//    @GetMapping(value = "/restaurant")
-//    public ResponseEntity<?> getRestaurantsByName(@RequestParam(value = "name") String restaurantName) {
-//        List<Restaurants> restaurants = restaurantService.getRestaurantByName(restaurantName);
-//        return new ResponseEntity<>(restaurants, HttpStatus.OK);
-//    }
-
-//    @GetMapping()
-//    public ResponseEntity<?> getRestaurantsByCuisine(@RequestParam(value = "cuisine") String cuisine) {
-//        List<Restaurants> restaurants = restaurantService.getRestaurantByCuisine(cuisine.toUpperCase());
-//        return new ResponseEntity<>(restaurants, HttpStatus.OK);
-//    }
-
-//    @GetMapping(value = "/addFav/{id}")
-//    public ResponseEntity<User> addRestaurantToFavs(@PathVariable(value = "id") Long id, HttpSession session){
-//        User user = (User) session.getAttribute("user");
-//        user.getFavorites().add(restaurantService.getRestaurantById(id).orElseThrow(() -> new RestaurantDoesNotExistException()));
-//        return new ResponseEntity<>(user, HttpStatus.OK);
-//    }
 }

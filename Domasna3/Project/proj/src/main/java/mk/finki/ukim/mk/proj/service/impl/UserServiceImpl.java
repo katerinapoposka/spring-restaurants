@@ -4,8 +4,8 @@ import mk.finki.ukim.mk.proj.model.Restaurants;
 import mk.finki.ukim.mk.proj.model.Role;
 import mk.finki.ukim.mk.proj.model.User;
 import mk.finki.ukim.mk.proj.model.exceptions.*;
+import mk.finki.ukim.mk.proj.repository.jpa.RestaurantRepository;
 import mk.finki.ukim.mk.proj.repository.jpa.UserRepository;
-import mk.finki.ukim.mk.proj.service.RestaurantService;
 import mk.finki.ukim.mk.proj.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,13 +15,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-    private final RestaurantService restaurantService;
+    private final RestaurantRepository restaurantRepository;
     private final PasswordEncoder passwordEncoder;
 
 
-    public UserServiceImpl(UserRepository userRepository, RestaurantService restaurantService, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RestaurantRepository restaurantRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.restaurantService = restaurantService;
+        this.restaurantRepository = restaurantRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addToFavourites(Long userId, Long restaurantId) {
         User user = userRepository.findById(userId).orElseThrow(()->new UserNotFoundException(userId));
-        Restaurants restaurant = restaurantService.getRestaurantById(restaurantId).orElseThrow(RestaurantDoesNotExistException::new);
+        Restaurants restaurant = restaurantRepository.findById(restaurantId).orElseThrow(RestaurantDoesNotExistException::new);
         user.getFavorites().add(restaurant);
         return userRepository.save(user);
     }
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User removeFavourites(Long userId, Long restaurantId) {
         User user = userRepository.findById(userId).orElseThrow(()->new UserNotFoundException(userId));
-        Restaurants restaurant = restaurantService.getRestaurantById(restaurantId).orElseThrow(RestaurantDoesNotExistException::new);
+        Restaurants restaurant = restaurantRepository.findById(restaurantId).orElseThrow(RestaurantDoesNotExistException::new);
         user.getFavorites().remove(restaurant);
         return userRepository.save(user);
     }
