@@ -1,0 +1,92 @@
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    .container-all{
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    .container-all .box-container{
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        gap: 20px;
+    }
+    .container-all .box-container .box{
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+    .container-all .box-container .box .image{
+        margin-bottom: 20px;
+        overflow: hidden;
+        height: 200px;
+        border-radius: 5px;
+    }
+    .container-all .box-container .box .image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .container-all .box-container .box .content h3{
+        font-size: 20px;
+    }
+    .container-all .box-container .box .content .btn{
+        display: inline-block;
+        padding: 10px 30px;
+        color: white;
+        background-color: seagreen;
+        border-radius: 20px;
+    }
+    .container-all .box-container .box .content .btn:hover{
+        display: inline-block;
+        padding: 10px 30px;
+        color: seagreen;
+        background-color: white;
+        border: 1px solid seagreen;
+        border-radius: 20px;
+    }
+    #poveke{
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 30px;
+        color: white;
+        background-color: seagreen;
+        border-radius: 20px;
+    }
+    #poveke:hover{
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 30px;
+        color: seagreen;
+        background-color: white;
+        border: 1px solid seagreen;
+        border-radius: 20px;
+    }
+</style>
+<div class="all" xmlns:th="http://www.thymeleaf.org">
+    <div class="container mb-4">
+        <a class="nazad" th:href="@{/restaurants}">Back to main page</a>
+    </div>
+    <div class="container-all">
+        <div class="box-container">
+            <div class="box" th:each="restaurant : ${restaurants}">
+                <div class="image">
+                    <img src="https://source.unsplash.com/200x200/?food">
+                </div>
+                <div class="content">
+                    <h3 th:text="${restaurant.getName()}"></h3>
+                    <a class="btn" th:href="@{/restaurants/{id} (id=${restaurant.getId()})}">
+                        MORE INFO
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <a class="btn" id="poveke" th:href="@{/restaurants/all/{pageId} (pageId=${pageId})}">SHOW MORE...</a>
+        </div>
+    </div>
+</div>
