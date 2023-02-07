@@ -24,4 +24,4 @@ public enum CuisineType {
     REGIONAL,
     BARBEQUE,
     CHINESE
-    }
+}

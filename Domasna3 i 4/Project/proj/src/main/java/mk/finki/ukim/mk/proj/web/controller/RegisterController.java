@@ -26,11 +26,11 @@ public class RegisterController {
 
     @GetMapping
     public String getRegisterPage(@RequestParam(required = false) String error, Model model) {
-        if(error != null && !error.isEmpty()) {
+        if (error != null && !error.isEmpty()) {
             model.addAttribute("hasError", true);
             model.addAttribute("error", error);
         }
-        model.addAttribute("bodyContent","register");
+        model.addAttribute("bodyContent", "register");
         return "master-template";
     }
 
@@ -41,7 +41,7 @@ public class RegisterController {
                            @RequestParam String name,
                            @RequestParam String surname,
                            @RequestParam Role role) {
-        try{
+        try {
             this.userService.register(username, password, repeatedPassword, name, surname, role);
             return "redirect:/login";
         } catch (InvalidArgumentsException | PasswordsDoNotMatchException exception) {

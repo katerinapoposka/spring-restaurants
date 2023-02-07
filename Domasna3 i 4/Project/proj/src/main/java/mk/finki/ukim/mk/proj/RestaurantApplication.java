@@ -11,13 +11,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @ServletComponentScan
 public class RestaurantApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RestaurantApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RestaurantApplication.class, args);
+    }
 
-	@Bean
-	PasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder(10);
-	}
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(10);
+    }
 
 }

@@ -1,5 +1,5 @@
 <style>
-    .favourites{
+    .favourites {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -8,49 +8,58 @@
         min-height: 100vh;
         background-color: #86bd5f;
     }
-    *{
+
+    * {
         box-sizing: border-box;
     }
-    .container-all{
+
+    .container-all {
         max-width: 1200px;
         margin: 0 auto;
         text-align: center;
         padding: 25px 20px;
     }
-    .container-all .box-container{
+
+    .container-all .box-container {
         width: 800px;
         display: grid;
         grid-template-columns: repeat(auto-fit, 250px);
         gap: 20px;
     }
-    .container-all .box-container .box{
+
+    .container-all .box-container .box {
         background: white;
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     }
-    .container-all .box-container .box .image{
+
+    .container-all .box-container .box .image {
         margin-bottom: 20px;
         overflow: hidden;
         height: 200px;
         border-radius: 5px;
     }
-    .container-all .box-container .box .image img{
+
+    .container-all .box-container .box .image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .container-all .box-container .box .content h3{
+
+    .container-all .box-container .box .content h3 {
         font-size: 20px;
     }
-    .container-all .box-container .box .content .btn{
+
+    .container-all .box-container .box .content .btn {
         display: inline-block;
         padding: 10px 30px;
         color: white;
         background-color: seagreen;
         border-radius: 20px;
     }
-    .container-all .box-container .box .content .btn:hover{
+
+    .container-all .box-container .box .content .btn:hover {
         display: inline-block;
         padding: 10px 30px;
         color: seagreen;
@@ -59,7 +68,6 @@
         border-radius: 20px;
     }
 </style>
-
 
 <div class="favourites" xmlns:th="http://www.thymeleaf.org">
     <div class="container mb-4">

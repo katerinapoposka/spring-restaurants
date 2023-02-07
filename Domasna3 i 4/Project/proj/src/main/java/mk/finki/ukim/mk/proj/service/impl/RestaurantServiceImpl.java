@@ -16,6 +16,7 @@ import java.util.Optional;
 public class RestaurantServiceImpl implements RestaurantService {
     private final RestaurantRepository restaurantRepository;
     private final RestaurantPageableRepository restaurantPageableRepository;
+
     public RestaurantServiceImpl(RestaurantRepository restaurantRepository, RestaurantPageableRepository restaurantPageableRepository) {
         this.restaurantRepository = restaurantRepository;
         this.restaurantPageableRepository = restaurantPageableRepository;
@@ -38,7 +39,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public List<Restaurants> getRestaurantByName(String name) {
-        return restaurantRepository.findByNameLikeIgnoreCase("%"+name+"%");
+        return restaurantRepository.findByNameLikeIgnoreCase("%" + name + "%");
     }
 
     @Override
