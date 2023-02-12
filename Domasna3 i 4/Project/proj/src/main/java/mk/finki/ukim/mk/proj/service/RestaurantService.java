@@ -11,9 +11,14 @@ import java.util.Optional;
 
 public interface RestaurantService {
     List<Restaurants> getAllRestaurants();
+
     Page<Restaurants> getAllRestaurantsPageable(Pageable pageable);
+
     Optional<Restaurants> getRestaurantById(Long id);
+
     List<Restaurants> getRestaurantByName(String name);
+
     List<Restaurants> getRestaurantByCuisine(String cuisine);
+
     List<CuisineType> getCuisines();
 }
