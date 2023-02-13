@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: Database
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: cit-restaurants
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    expose:
+      - "5432"
+    ports:
+      - 5432:5432
+    networks:
+      - restaurants
+    command: -p 5432
+    container_name: postgresql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      timeout: 20s
+      retries: 10
+
+  back-end:
+    build:
+      context: Project/proj
+      dockerfile: Dockerfile
+    ports:
+      - "9091:9091"
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/cit-restaurants
+      DB_USERNAME: postgres
+      DB_PASSWORD: admin
+    networks:
+      - restaurants
+    depends_on:
+      - db
+
+networks:
+  restaurants:
