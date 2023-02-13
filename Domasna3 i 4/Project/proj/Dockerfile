@@ -4,6 +4,6 @@ WORKDIR /Project/proj
 
 COPY target/CIT-Restaurants.jar /Project/proj/CIT-Restaurants.jar
 
-EXPOSE 9091
+EXPOSE 8080
 
 CMD ["java", "-jar", "CIT-Restaurants.jar"]
