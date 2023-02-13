@@ -27,7 +27,8 @@ services:
     build:
       context: Project/proj
       dockerfile: Dockerfile
-    image: angelnasev/domasna3i4-back-end
+    image: angelnasev/back-end
+    container_name: backend
     ports:
       - "8080:8080"
     environment:

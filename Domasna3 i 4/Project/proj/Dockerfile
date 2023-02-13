@@ -2,7 +2,7 @@ FROM openjdk:17-alpine
 
 WORKDIR /Project/proj
 
-COPY target/CIT-Restaurants.jar /Project/proj/CIT-Restaurants.jar
+COPY target/lab.jar /Project/proj/CIT-Restaurants.jar
 
 EXPOSE 8080
 
