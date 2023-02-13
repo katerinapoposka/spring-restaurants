@@ -5,6 +5,7 @@ services:
     build:
       context: Database
       dockerfile: Dockerfile
+    image: angelnasev/domasna3i4-db
     environment:
       POSTGRES_DB: cit-restaurants
       POSTGRES_USER: postgres
@@ -26,6 +27,7 @@ services:
     build:
       context: Project/proj
       dockerfile: Dockerfile
+    image: angelnasev/domasna3i4-back-end
     ports:
       - "9091:9091"
     environment:
