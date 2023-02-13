@@ -27,9 +27,10 @@ services:
     build:
       context: Project/proj
       dockerfile: Dockerfile
-    image: angelnasev/domasna3i4-back-end
+    image: angelnasev/back-end
+    container_name: backend
     ports:
-      - "9091:9091"
+      - "8080:8080"
     environment:
       DB_URL: jdbc:postgresql://db:5432/cit-restaurants
       DB_USERNAME: postgres
