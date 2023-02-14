@@ -5,7 +5,7 @@ services:
     build:
       context: Database
       dockerfile: Dockerfile
-    image: angelnasev/domasna3i4-db
+    image: angelnasev/database
     environment:
       POSTGRES_DB: cit-restaurants
       POSTGRES_USER: postgres
