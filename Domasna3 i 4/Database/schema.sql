@@ -51,8 +51,8 @@ create table if not exists public.cit_users_favorites
 alter table public.cit_users_favorites
     owner to postgres;
 
-INSERT INTO public.cit_users (id, is_account_non_expired, is_account_non_locked, is_credentials_non_expired, is_enabled, name, password, role, surname, username) VALUES 
-(1, true, true, true, true, 'John', '$2a$10$AlbgbpFGwxVSnaT0tk4KHOcUSwOyBuuZy1t4rBPd.ZFmSZagJQfwa', 'ROLE_USER', 'Smith', 'JohnSmith');
+INSERT INTO public.cit_users (is_account_non_expired, is_account_non_locked, is_credentials_non_expired, is_enabled, name, password, role, surname, username) VALUES
+(true, true, true, true, 'John', '$2a$10$AlbgbpFGwxVSnaT0tk4KHOcUSwOyBuuZy1t4rBPd.ZFmSZagJQfwa', 'ROLE_USER', 'Smith', 'JohnSmith');
 
 INSERT INTO public.restaurants (id, addr_city, cuisine, name, opening_hours, website, internet_access, phone, email, smoking, lon, lat) VALUES (309894643, 'Скопје', 'ITALIAN', 'Пелистер', 'Mo-Th 07:00-00:00; Fr-Sa 07:00-01:00; Su 10:30-00:00', 'https://www.pelisterhotel.com.mk/', null, null, null, null, 21.4315704, 41.9953933);
 INSERT INTO public.restaurants (id, addr_city, cuisine, name, opening_hours, website, internet_access, phone, email, smoking, lon, lat) VALUES (382645252, null, null, 'Brioni', null, null, null, null, null, null, 22.0215553, 41.4347276);
@@ -383,4 +383,3 @@ INSERT INTO public.restaurants (id, addr_city, cuisine, name, opening_hours, web
 INSERT INTO public.restaurants (id, addr_city, cuisine, name, opening_hours, website, internet_access, phone, email, smoking, lon, lat) VALUES (5572053321, null, 'BALKAN', 'Дебар Маало', 'Su-Th 08:00-00:30; Fr-Sa 08:00-01:00', null, 'wlan', '+389 76 219 654', null, null, 21.4205747, 42.0013292);
 INSERT INTO public.restaurants (id, addr_city, cuisine, name, opening_hours, website, internet_access, phone, email, smoking, lon, lat) VALUES (4292369647, null, 'KEBAB', 'Kaj Dzek', null, null, 'wlan', null, null, null, 21.6186125, 41.9371686);
 
-INSERT INTO public.cit_users_favorites(user_id, favorites_id) VALUES (1,309894643),(1,459668914)
