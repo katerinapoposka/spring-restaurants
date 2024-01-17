@@ -26,3 +26,13 @@ jobs:
 
     - name: Build with Maven (skip tests)
       run: mvn -f "Domasna3 i 4/Project/proj/pom.xml" clean install -DskipTests
+
+    - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: katerinapoposka/springboot-images-new
+        tags: latest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
